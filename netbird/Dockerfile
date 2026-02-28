@@ -6,6 +6,7 @@ FROM netbirdio/netbird:0.66.0 AS netbird-container
 FROM ${BUILD_FROM}
 
 #RUN apk add --no-cache nftables=1.1.5-r2
+RUN apk update
 RUN apk add --no-cache nftables
 
 # Copy root filesystem
