@@ -1,11 +1,12 @@
 ARG BUILD_FROM=ghcr.io/hassio-addons/base:20.0.1
 
-FROM netbirdio/netbird:0.66.0 as netbird-container
+FROM netbirdio/netbird:0.66.0 AS netbird-container
 
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
-RUN apk add --no-cache nftables=1.1.5-r2
+#RUN apk add --no-cache nftables=1.1.5-r2
+RUN apk add --no-cache nftables
 
 # Copy root filesystem
 COPY rootfs /
